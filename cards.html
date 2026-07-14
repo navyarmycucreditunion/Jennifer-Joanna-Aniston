@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Summit Trust - Cards</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Segoe UI,Arial,sans-serif;background:#eef2f7;color:#333}
+.wrapper{display:flex;min-height:100vh}
+.sidebar{width:250px;background:#13294b;color:#fff;padding:20px}
+.sidebar h2{margin-bottom:20px}
+.sidebar a{display:block;color:#fff;text-decoration:none;padding:12px;border-radius:10px;margin:6px 0}
+.sidebar a:hover,.active{background:#1d4275}
+.content{flex:1}
+.top{display:flex;justify-content:space-between;align-items:center;background:#fff;padding:18px 24px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:20px;padding:24px}
+.card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 6px 16px rgba(0,0,0,.08)}
+.bankcard{background:linear-gradient(135deg,#13294b,#b22222,#d4af37);color:#fff;border-radius:18px;padding:24px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between}
+.actions button{background:#13294b;color:#fff;border:none;padding:10px 14px;border-radius:8px;margin:6px;cursor:pointer}
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px;border-bottom:1px solid #ddd;text-align:left}
+.badge{background:#2e7d32;color:#fff;padding:4px 8px;border-radius:12px;font-size:12px}
+.notice{background:#fff8e1;border-left:4px solid #d4af37;padding:12px}
+@media(max-width:900px){.wrapper{display:block}.sidebar{width:100%}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="sidebar">
+<h2>Summit Trust</h2>
+<a href="dashboard.html">Dashboard</a>
+<a href="accounts.html">Accounts</a>
+<a href="transfers.html">Transfers</a>
+<a href="billpay.html">Bill Pay</a>
+<a href="cards.html" class="active">Cards</a>
+<a href="insights.html">Insights</a>
+<a href="settings.html">Settings</a>
+</div>
+
+<div class="content">
+<div class="top"><strong>Cards</strong><div>Jennifer ▾</div></div>
+
+<div class="grid">
+<div>
+<div class="bankcard">
+<div>
+<h2>Summit Trust Platinum</h2>
+<p>Debit Card</p>
+</div>
+<div>
+<h2>**** **** **** 4821</h2>
+<p>Jordan</p>
+</div>
+</div>
+
+<div class="card" style="margin-top:20px">
+<h3>Card Controls</h3>
+<div class="actions">
+<button onclick="demo('Lock Card')">Lock Card</button>
+<button onclick="demo('Replace Card')">Replace Card</button>
+<button onclick="demo('Change PIN')">Change PIN</button>
+<button onclick="demo('Travel Notice')">Travel Notice</button>
+</div>
+</div>
+
+<div class="card" style="margin-top:20px">
+<h3>Recent Card Transactions</h3>
+<table>
+<tr><th>Date</th><th>Merchant</th><th>Amount</th><th>Status</th></tr>
+<tr><td>Jul 12</td><td>Amazon</td><td>$8,600.20</td><td><span class="badge">Approved</span></td></tr>
+<tr><td>Jul 11</td><td>Starbucks</td><td>$8,950.75</td><td><span class="badge">Approved</span></td></tr>
+<tr><td>Jul 10</td><td>Fuel Station</td><td>$6,011.90</td><td><span class="badge">Approved</span></td></tr>
+<tr><td>Jul 09</td><td>Restaurant</td><td>$5,400.00</td><td><span class="badge">Approved</span></td></tr>
+</table>
+</div>
+</div>
+
+<div>
+<div class="card">
+<h3>Card Details</h3>
+<p><strong>Type:</strong> Platinum Debit</p><br>
+<p><strong>Status:</strong> Active</p><br>
+<p><strong>Available Balance:</strong> $19,000,580.42</p><br>
+<p><strong>Daily Limit:</strong> $50,000</p>
+</div>
+
+<div class="card" style="margin-top:20px">
+<h3>Security</h3>
+<div class="notice">
+✔ Contactless Enabled<br><br>
+✔ International Transactions Enabled<br><br>
+✔ Fraud Monitoring Active<br><br>
+✔ Card Notifications Enabled
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+function demo(action){
+ alert(action + " feature is unavailable now.");
+}
+</script>
+</body>
+</html>

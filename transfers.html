@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Summit Trust - Transfers</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Segoe UI,Arial,sans-serif;background:#eef2f7;color:#333}
+.wrapper{display:flex;min-height:100vh}
+.sidebar{width:240px;background:#13294b;color:#fff;padding:20px}
+.sidebar h2{margin-bottom:20px}
+.sidebar a{display:block;color:#fff;text-decoration:none;padding:12px;border-radius:8px;margin:4px 0}
+.sidebar a:hover,.sidebar a.active{background:#1d4275}
+.content{flex:1}
+.top{background:#fff;padding:16px 24px;display:flex;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.main{padding:24px;display:grid;grid-template-columns:2fr 1fr;gap:20px}
+.card{background:#fff;border-radius:14px;padding:20px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+h3{margin-bottom:16px;color:#13294b}
+label{display:block;margin:12px 0 6px;font-weight:600}
+input,select,textarea{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px}
+textarea{height:90px}
+.btns{margin-top:18px}
+button{padding:10px 18px;border:none;border-radius:8px;cursor:pointer}
+.primary{background:#13294b;color:#fff}
+.secondary{background:#d4af37}
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px;border-bottom:1px solid #ddd;text-align:left}
+.badge{padding:4px 8px;border-radius:12px;color:#fff;font-size:12px}
+.done{background:#2e7d32}.pending{background:#f9a825}
+.notice{background:#fff8e1;border-left:4px solid #d4af37;padding:12px}
+@media(max-width:900px){.wrapper{display:block}.sidebar{width:100%}.main{grid-template-columns:1fr}}
+
+.error-field{border:2px solid #d40511!important;background:#fff5f5;}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="sidebar">
+<h2>Summit Trust</h2>
+<a href="dashboard.html">Dashboard</a>
+<a href="accounts.html">Accounts</a>
+<a class="active" href="transfers.html">Transfers</a>
+<a href="billpay.html">Bill Pay</a>
+<a href="cards.html">Cards</a>
+<a href="insights.html">Insights</a>
+<a href="settings.html">Settings</a>
+</div>
+<div class="content">
+<div class="top"><strong>Transfer Funds</strong><div>Jennifer ▾</div></div>
+<div class="main">
+<div>
+<div class="card">
+<h3>New Transfer</h3>
+<label>From Account</label>
+<select><option>Checking ••••4821 ($17,024,110.18)</option><option>Savings ••••7710($1,783,220.2)</option></select>
+<label>Beneficiary Name</label><input placeholder="Enter beneficiary name"/>
+<label>Bank</label><input placeholder="Receiving bank"/>
+<label>Account Number</label><input placeholder="Account number"/>
+<label>Amount (USD)</label><input placeholder="0.00" type="number"/>
+<label>Reference</label><input placeholder="Payment reference"/>
+<label>Description</label><textarea placeholder="Optional message"></textarea>
+<div class="btns">
+<button class="primary" onclick="submitTransfer()">Review Transfer</button>
+<button class="secondary" type="reset">Reset</button>
+</div>
+</div>
+<div class="card" style="margin-top:20px">
+<h3>Recent Transfers</h3>
+<table>
+<tr><th>Date</th><th>Beneficiary</th><th>Amount</th><th>Status</th></tr>
+<tr><td>Jul 13</td><td>John Carter</td><td>$275,000</td><td><span class="badge done">Completed</span></td></tr>
+<tr><td>Jun 25</td><td>Sarah Wilson</td><td>$950,000</td><td><span class="badge pending">Cancelled</span></td></tr>
+<tr><td>Jun 17</td><td>William Thompson</td><td>$22,600</td><td><span class="badge done">Completed</span></td></tr>
+<tr><td>May 31</td><td>David Mitchell</td><td>$482,018</td><td><span class="badge done">Completed</span></td></tr>
+<tr><td>May 23</td><td>Robert Johnson</td><td>$567,450</td><td><span class="badge done">Completed</span></td></tr>
+<tr><td>May 02</td><td>Christopher Walker</td><td>$950</td><td><span class="badge pending">Cancelled</span></td></tr>
+<tr><td>Apr 22</td><td>Charlotte Moore</td><td>$1,497</td><td><span class="badge done">Completed</span></td></tr>
+<tr><td>Mar 15</td><td>Mia Thompson</td><td>$1,200,000</td><td><span class="badge done">Completed</span></td></tr>
+
+</table>
+</div>
+</div>
+<div>
+<div class="card">
+<h3>Transfer Summary</h3>
+<p><strong>Available Balance</strong><br/>$19,000,580.42</p><br/>
+<p><strong>Transfer Fee</strong><br/>$0.00</p><br/>
+<p><strong>Estimated Delivery</strong><br/>Within 1 Business Day</p>
+</div>
+<div class="card" style="margin-top:20px">
+<h3>Security Notice</h3>
+<div class="notice">
+✔ SSL Encryption<br/><br/>
+✔ Two-Factor Authentication Enabled<br/><br/>
+✔ Fraud Monitoring Active
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+function submitTransfer(){
+ const fields=[
+ document.querySelector("input[placeholder='Enter beneficiary name']"),
+ document.querySelector("input[placeholder='Receiving bank']"),
+ document.querySelector("input[placeholder='Account number']"),
+ document.querySelector("input[type='number']"),
+ document.querySelector("input[placeholder='Payment reference']"),
+ document.querySelector("textarea")
+ ];
+ document.querySelectorAll("input,select,textarea").forEach(f=>f.classList.remove("error-field"));
+ let valid=true;
+ fields.forEach(f=>{
+   if(!f.value.trim()){f.classList.add("error-field");valid=false;}
+ });
+ if(!valid){alert("Enter payment info");return;}
+ alert("Error");
+}
+</script>
+</body>
+</html>

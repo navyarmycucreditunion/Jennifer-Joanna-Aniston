@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Summit Trust Demo Dashboard</title>
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Segoe UI,Arial;background:#eef2f7;color:#243}
+.wrapper{display:flex;min-height:100vh}.sidebar{position:fixed;left:-260px;top:0;width:250px;height:100%;background:#13294b;color:#fff;padding:20px;transition:left .3s;z-index:1000}.sidebar.open{left:0}.sidebar a{display:block;color:#fff;text-decoration:none;padding:12px 0}.content{flex:1;width:100%}.top{display:flex;justify-content:space-between;align-items:center;background:#fff;padding:15px 20px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;padding:20px}.card{background:#fff;border-radius:14px;padding:18px;box-shadow:0 4px 12px rgba(0,0,0,.08);transition:.3s}.card:hover{transform:translateY(-5px)}
+.balance{background:linear-gradient(135deg,#b22222,#d4af37);color:#fff}.btn{display:inline-block;padding:8px 12px;background:#13294b;color:#fff;border-radius:8px;margin:5px;font-size:13px}
+table{width:100%;border-collapse:collapse}th,td{padding:10px;border-bottom:1px solid #ddd;text-align:left}
+.chart{height:12px;background:#ddd;border-radius:10px;overflow:hidden;margin:10px 0}.fill{height:100%;background:#b22222;animation:grow 2s forwards;width:0}
+@keyframes grow{to{width:72%}} .bell{background:#fff3cd;padding:10px;border-left:4px solid #d4af37}
+@media(max-width:768px){.wrapper{display:block}.grid{grid-template-columns:1fr}}
+</style></head><body>
+	<div class="sidebar" id="sb">
+    <h2>Summit Trust</h2>
+
+    <a href="dashboard.html">Dashboard</a>
+    <a href="accounts.html">Accounts</a>
+    <a href="transfers.html">Transfers</a>
+    <a href="billpay.html">Bill Pay</a>
+    <a href="cards.html">Cards</a>
+    <a href="insights.html">Insights</a>
+    <a href="settings.html">Settings</a>
+</div>
+<div class='wrapper'>
+<div class='sidebar' id='sb'><h2>Summit Trust</h2><a href=#>Dashboard</a><a href=#>Accounts</a><a href=#>Transfers</a><a href=#>Bill Pay</a><a href=#>Cards</a><a href=#>Insights</a><a href=#>Settings</a></div>
+<div class='content'>
+<div class='top'><button onclick='toggle()'>☰</button><strong>Account Overview </strong><div>Jennifer ▾</div></div>
+<div class='grid'>
+<div class='card balance'><h3>Available Balance</h3><h1>$19,000,580.42</h1></div>
+<div class='card'><h3>Checking (...4821)</h3><h2>$17,024,110.18</h2></div>
+<div class='card'><h3>Savings (...7710)</h3><h2>$1,783,220.2</h2></div>
+<div class='card'><h3>Credit Card</h3><p>Ending ••4821</p></div>
+
+<div class='card'><h3>Quick Actions</h3><span class='btn'>Transfer</span><span class='btn'>Bill Pay</span><span class='btn'>Statements</span><span class='btn'>Cards</span></div>
+
+<div class='card'><h3>Recent Transactions</h3><table><tr><th>Date</th><th>Description</th><th>Amount</th></tr><tr><td>Jul 11</td><td> Investment Distribution</td><td>+$2,500,000.00</td></tr><tr><td>Jul 10</td><td>Treasury Bill</td><td>-$500,000.00</td></tr><tr><td>Jul 8</td><td>Private Banking Fee</td><td>-$4,250.00</td></tr><tr><td>Jul 7</td><td>Dividend Payment</td><td>+$85,750.00</td></tr></table></div>
+
+<div class='card'><h3>Spending</h3><div class='chart'><div class='fill'></div></div><p>72% of monthly budget used.</p><h3>Savings</h3><div class='chart'><div class='fill' style='animation-delay:.3s'></div></div></div>
+
+<div class='card'><h3>Credit Card Overview</h3><p>Available Credit: $7,800</p><p>Payment Due: Jul 28</p></div>
+
+<div class='card'><h3>Alerts & Notifications</h3><div class='bell'>✔ Security alerts enabled</div><div class='bell'>✔ Statement available</div></div>
+
+<div class='card'><h3>Financial Insights</h3><p>Your spending is 8% lower than last month. Savings deposits are on track.</p></div>
+</div></div></div>
+<script>function toggle(){document.getElementById('sb').classList.toggle('open');}</script>
+</body></html>

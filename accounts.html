@@ -1,0 +1,42 @@
+
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Summit Trust - Accounts</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Segoe UI,Arial;background:#eef2f7;color:#333}
+.wrapper{display:flex;min-height:100vh}.sidebar{width:250px;background:#13294b;color:#fff;padding:20px}
+.sidebar h2{margin-bottom:20px}.sidebar a{display:block;color:#fff;text-decoration:none;padding:12px;border-radius:10px;margin:6px 0}
+.sidebar a:hover,.sidebar .active{background:#1f487d}.content{flex:1}
+.top{display:flex;justify-content:space-between;align-items:center;background:#fff;padding:18px 24px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.hero{margin:24px;background:linear-gradient(135deg,#13294b,#b22222,#d4af37);color:#fff;padding:28px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,.18)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding:0 24px 24px}
+.card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 6px 16px rgba(0,0,0,.08);transition:.25s}.card:hover{transform:translateY(-5px)}
+.actions button{background:#13294b;color:#fff;border:none;border-radius:8px;padding:10px 14px;margin:6px;cursor:pointer}
+.chart{height:14px;background:#ddd;border-radius:10px;overflow:hidden;margin-top:12px}.fill{height:100%;background:#2e7d32;width:78%}
+table{width:100%;border-collapse:collapse}th,td{padding:10px;border-bottom:1px solid #e4e4e4;text-align:left}
+.badge{background:#2e7d32;color:#fff;padding:4px 8px;border-radius:10px;font-size:12px}
+@media(max-width:850px){.wrapper{display:block}.sidebar{width:100%}}
+</style></head><body>
+<div class="wrapper">
+<div class="sidebar"><h2>Summit Trust</h2>
+<a href="dashboard.html">Dashboard</a><a class="active" href="accounts.html">Accounts</a><a href="transfers.html">Transfers</a><a href="billpay.html">Bill Pay</a><a href="cards.html">Cards</a><a href="insights.html">Insights</a><a href="settings.html">Settings</a>
+</div>
+<div class="content">
+<div class="top"><strong>Accounts Overview</strong><div>🔔 Jennifer ▾</div></div>
+<div class="hero"><h1>$19,000,580.42</h1><p>Total Portfolio Balance</p></div>
+<div class="grid">
+<div class="card"><h3>Checking</h3><h2>$17,024,110.18</h2><p>••••4821</p></div>
+<div class="card"><h3>Savings</h3><h2>$1,783,220.2</h2><p>••••7710</p></div>
+<div class="card"><h3>Investment</h3><h2>$185,450.10</h2><p>Brokerage</p></div>
+<div class="card"><h3>Credit Card</h3><h2>$7,800 Available</h2><p>Ending ••••9934</p></div>
+<div class="card"><h3>Quick Actions</h3><div class="actions"><button>Transfer</button><button>Statements</button><button>Deposit</button><button>Cards</button></div></div>
+<div class="card"><h3>Monthly Spending</h3><div class="chart"><div class="fill"></div></div><p>78% of monthly budget used.</p></div>
+<div class="card"><h3>Financial Insights</h3><p>Your savings increased by 12% this month. Spending is 8% lower than last month.</p></div>
+<div class="card"><h3>Notifications</h3><p>✔ Statement Ready</p><p>✔ Security Alerts Enabled</p><p>✔ Credit Card Payment Due Jul 28</p></div>
+<div class="card" style="grid-column:1/-1"><h3>Recent Transactions</h3>
+<table><tr><th>Date</th><th>Description</th><th>Amount</th><th>Status</th></tr>
+<tr><td>Jul 12</td><td>Payroll Deposit</td><td>+$2,000,450.00</td><td><span class="badge">Completed</span></td></tr>
+<tr><td>Jul 11</td><td>Wire Transfer</td><td>-$107,250.00</td><td><span class="badge">Completed</span></td></tr>
+<tr><td>Jul 10</td><td>Utility Bill</td><td>-$35,000.50</td><td><span class="badge">Completed</span></td></tr>
+<tr><td>Jul 09</td><td>Interest Credit</td><td>+$155,450.75</td><td><span class="badge">Completed</span></td></tr>
+</table></div>
+</div></div></div></body></html>

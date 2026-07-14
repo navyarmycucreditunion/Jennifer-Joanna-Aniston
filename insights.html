@@ -1,0 +1,77 @@
+
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Summit Trust - Insights</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Segoe UI,Arial;background:#eef2f7;color:#333}
+.wrap{display:flex;min-height:100vh}.side{width:250px;background:#13294b;color:#fff;padding:20px}.side a{display:block;color:#fff;text-decoration:none;padding:12px;border-radius:10px;margin:5px 0}.side .active,.side a:hover{background:#1d4275}
+.main{flex:1}.top{background:#fff;padding:18px 24px;display:flex;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.hero{margin:24px;background:linear-gradient(135deg,#13294b,#b22222,#d4af37);color:#fff;padding:28px;border-radius:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;padding:0 24px 24px}
+.card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+.bar{height:12px;background:#ddd;border-radius:10px;overflow:hidden}.fill{height:100%;background:#2e7d32}
+table{width:100%;border-collapse:collapse}th,td{padding:9px;border-bottom:1px solid #ddd}
+@media(max-width:850px){.wrap{display:block}.side{width:100%}}
+</style></head><body>
+<div class="wrap"><div class="side"><h2>Summit Trust</h2>
+<a href="dashboard.html">Dashboard</a><a href="accounts.html">Accounts</a><a href="transfers.html">Transfers</a><a href="billpay.html">Bill Pay</a><a href="cards.html">Cards</a><a class="active" href="insights.html">Insights</a><a href="settings.html">Settings</a>
+</div><div class="main">
+<div class="top"><b>Financial Insights</b><div>Jennifer ▾</div></div>
+<div class="hero"><h1>Financial Health Score: 95/100</h1><p>Strong financial position with consistent savings and controlled spending.</p></div>
+<div class="grid">
+<div class="card"><h3>Net Worth</h3><h2>$19,204,030.52</h2></div>
+<div class="card"><h3>Monthly Income</h3><h2>$4,700,000.00</h2></div>
+<div class="card"><h3>Monthly Expenses</h3><h2>$2,300,000.00</h2></div>
+<div class="card"><h3>Total Savings</h3><h2>$1,783,220.2</h2></div>
+<div class="card"><h3>Investments</h3><h2>$185,450</h2></div>
+<div class="card"><h3>Credit Utilization</h3><div class="bar"><div class="fill" style="width:28%"></div></div><p>28%</p></div>
+<div class="card" style="grid-column:1/-1"><h3>Monthly Trends</h3><canvas id="trend"></canvas></div>
+<div class="card"><h3>Savings Goal</h3><div class="bar"><div class="fill" style="width:88%"></div></div><p>88% Complete</p></div>
+<div class="card"><h3>Budget Progress</h3><div class="bar"><div class="fill" style="width:72%"></div></div><p>72% Used</p></div>
+<div class="card"><h3>Cash Flow Analysis</h3>
+
+<p><strong>Monthly Income</strong></p>
+<h2>$4,700,000.00</h2>
+
+<br>
+
+<p><strong>Monthly Expenses</strong></p>
+<h2>$2,300,000.00</h2>
+
+<hr style="margin:18px 0;">
+
+<p><strong>Net Cash Flow</strong></p>
+
+<h1 style="color:#2e7d32;">
++$2,400,000.00
+</h1>
+
+<p style="margin-top:15px;">
+🟢 <strong>Positive Cash Flow</strong>
+</p>
+
+<p style="margin-top:12px;line-height:1.7;">
+Your income exceeded your expenses by
+<strong>$2,400,000.00</strong> this month,
+resulting in a healthy cash surplus available
+for savings, investments, and future financial
+goals.
+</p>.</p></div>
+<div class="card"><h3>Credit Score </h3><h2>850</h2></div>
+<div class="card"><h3>Upcoming Bills</h3><p>Electric - Jul 20</p><p>Internet - Jul 24</p><p>Insurance - Jul 28</p></div>
+<div class="card"><h3>Top Spending Categories</h3><table><tr><td>Housing</td><td>$2,000,000.00</td></tr><tr><td>Transport</td><td>$760,000.00</td></tr><tr><td>Food</td><td>$480,000.00</td></tr><tr><td>Shopping</td><td>$520,000.00</td></tr><tr><td>Entertainment</td><td>$315,000.00</td></tr><tr><td>Healthcare</td><td>$640,000.00</td></tr></table></div>
+<div class="card"><h3>Investment Performance</h3><p>Portfolio +9.8% YTD.</p></div>
+<div class="card"><h3>Financial Recommendations</h3><ul>
+<li>✔ Excellent positive cash flow this month.</li>
+<li>✔ Continue investing excess monthly income.</li>
+<li>✔ Increase emergency savings reserve.</li>
+<li>✔ Diversify long-term investment portfolio.</li>
+<li>✔ Maintain current spending habits.</li>
+</ul></div>
+<div class="card"><h3>Recent Milestones</h3><p>✔ Savings goal nearly reached.</p><p>✔ Expenses down 8%.</p></div>
+<div class="card"><h3>Notifications</h3><p>Statement available.</p><p>Budget on track.</p></div>
+<div class="card"><button onclick="alert('Demo report generated.')">Download Financial Report</button></div>
+</div></div></div>
+<script>
+new Chart(document.getElementById('trend'),{type:'line',data:{labels:['Jan','Feb','Mar','Apr','May','Jun'],datasets:[{label:'Savings',data:[6,7,8,8.5,9,10]}]}});
+</script></body></html>

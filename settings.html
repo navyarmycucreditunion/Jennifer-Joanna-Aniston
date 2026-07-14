@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Summit Trust - Settings</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Segoe UI,Arial,sans-serif;background:#eef2f7;color:#333}
+.wrapper{display:flex;min-height:100vh}
+.sidebar{width:250px;background:#13294b;color:#fff;padding:20px}
+.sidebar h2{margin-bottom:20px}
+.sidebar a{display:block;color:#fff;text-decoration:none;padding:12px;border-radius:10px;margin:6px 0}
+.sidebar a:hover,.active{background:#1d4275}
+.content{flex:1}
+.top{background:#fff;padding:18px 24px;display:flex;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:20px;padding:24px}
+.card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 5px 15px rgba(0,0,0,.08)}
+label{display:block;margin:12px 0 6px;font-weight:600}
+input,select{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px}
+.switch{display:flex;justify-content:space-between;align-items:center;margin:14px 0}
+button{background:#13294b;color:#fff;border:none;padding:11px 18px;border-radius:8px;cursor:pointer}
+.notice{background:#fff8e1;border-left:4px solid #d4af37;padding:12px;margin-top:15px}
+@media(max-width:900px){.wrapper{display:block}.sidebar{width:100%}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="sidebar">
+<h2>Summit Trust</h2>
+<a href="dashboard.html">Dashboard</a>
+<a href="accounts.html">Accounts</a>
+<a href="transfers.html">Transfers</a>
+<a href="billpay.html">Bill Pay</a>
+<a href="cards.html">Cards</a>
+<a href="insights.html">Insights</a>
+<a href="settings.html" class="active">Settings</a>
+</div>
+<div class="content">
+<div class="top"><strong>Settings</strong><div>Jennifer ▾</div></div>
+<div class="grid">
+<div class="card">
+<h3>Profile Settings</h3>
+<label>Full Name</label><input value="Jennifer Joanna Aniston">
+<label>Email</label><input value="jenniferanistonjoan44@gmail.com">
+<label>Phone</label><input value="+1 (949) 540-9485">
+<label>Language</label>
+<select><option>English</option><option>Spanish</option></select>
+<div class="switch"><span>Email Notifications</span><input type="checkbox" checked></div>
+<div class="switch"><span>SMS Alerts</span><input type="checkbox" checked></div>
+<div class="switch"><span>Two-Factor Authentication</span><input type="checkbox" checked></div>
+<button onclick="saveSettings()">Save Changes</button>
+<div class="notice">Security Tip: Keep your contact information up to date and use two-factor authentication.</div>
+</div>
+<div class="card">
+<h3>Security</h3>
+<p><strong>Last Login</strong><br>July 14, 2026</p><br>
+<p><strong>Device</strong><br>Chrome on Windows</p><br>
+<p><strong>Password</strong><br>Last changed 30 days ago</p><br>
+<button onclick="alert(' Password change unavailable.')">Change Password</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+function saveSettings(){
+ alert("Settings saved successfully.");
+}
+</script>
+</body>
+</html>

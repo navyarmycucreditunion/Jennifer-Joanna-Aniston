@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Summit Trust - Bill Pay</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Segoe UI,Arial,sans-serif;background:#eef2f7;color:#333}
+.wrapper{display:flex;min-height:100vh}
+.sidebar{width:250px;background:#13294b;color:#fff;padding:20px}
+.sidebar h2{margin-bottom:20px}
+.sidebar a{display:block;color:#fff;text-decoration:none;padding:12px;border-radius:10px;margin:6px 0}
+.sidebar a:hover,.active{background:#1d4275}
+.content{flex:1}
+.top{background:#fff;padding:18px 24px;display:flex;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:20px;padding:24px}
+.card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 6px 16px rgba(0,0,0,.08)}
+label{display:block;margin:10px 0 6px;font-weight:600}
+input,select,textarea{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px}
+button{margin-top:15px;background:#13294b;color:#fff;border:none;padding:11px 18px;border-radius:8px;cursor:pointer}
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px;border-bottom:1px solid #ddd;text-align:left}
+.badge{background:#2e7d32;color:#fff;padding:4px 8px;border-radius:12px;font-size:12px}
+.notice{background:#fff8e1;border-left:4px solid #d4af37;padding:12px}
+@media(max-width:900px){.wrapper{display:block}.sidebar{width:100%}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="sidebar">
+<h2>Summit Trust</h2>
+<a href="dashboard.html">Dashboard</a>
+<a href="accounts.html">Accounts</a>
+<a href="transfers.html">Transfers</a>
+<a href="billpay.html" class="active">Bill Pay</a>
+<a href="cards.html">Cards</a>
+<a href="insights.html">Insights</a>
+<a href="settings.html">Settings</a>
+</div>
+<div class="content">
+<div class="top"><strong>Bill Pay</strong><div>Jennifer ▾</div></div>
+<div class="grid">
+<div>
+<div class="card">
+<h3>Schedule a Payment</h3>
+<label>Pay From</label>
+<select><option>Checking ••••4821</option></select>
+<label>Biller Name</label>
+<input placeholder="Utility Company">
+<label>Account Number</label>
+<input placeholder="Customer Account Number">
+<label>Amount</label>
+<input type="number" placeholder="0.00">
+<label>Payment Date</label>
+<input type="date">
+<label>Memo</label>
+<textarea placeholder="Optional note"></textarea>
+<button onclick="payBill()">Review Payment</button>
+</div>
+<div class="card" style="margin-top:20px">
+<h3>Recent Bill Payments</h3>
+<table>
+<tr><th>Date</th><th>Biller</th><th>Amount</th><th>Status</th></tr>
+<tr><td>Jul 10</td><td>Electric Company</td><td>$40,000.00</td><td><span class="badge">Paid</span></td></tr>
+<tr><td>Jul 08</td><td>Water Utility</td><td>$35,000.50</td><td><span class="badge">Paid</span></td></tr>
+<tr><td>Jul 05</td><td>Internet Provider</td><td>$15,000.99</td><td><span class="badge">Paid</span></td></tr>
+</table>
+</div>
+</div>
+<div>
+<div class="card">
+<h3>Payment Summary</h3>
+<p><strong>Available Balance</strong><br>$19,000,580.42</p><br>
+<p><strong>Processing Fee</strong><br>$0.00</p><br>
+<p><strong>Estimated Delivery</strong><br>Same Business Day</p>
+</div>
+<div class="card" style="margin-top:20px">
+<h3>Security Notice</h3>
+<div class="notice">
+✔ Secure encrypted payments<br><br>
+✔ Two-factor authentication enabled<br><br>
+✔ Fraud monitoring active
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+function payBill(){
+ const req=document.querySelectorAll("input,select,textarea");
+ let ok=true;
+ req.forEach(e=>{
+   e.style.border="1px solid #ccc";
+   if(e.value.trim()===""){e.style.border="2px solid #c00";ok=false;}
+ });
+ if(!ok){alert("Enter payment information");return;}
+ alert("Error");
+}
+</script>
+</body>
+</html>
